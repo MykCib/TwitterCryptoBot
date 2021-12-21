@@ -43,17 +43,17 @@ while n < 100:
     change_list.append(two)
     n += 1
 
-max = -100
+up = -100
 name = "nothing"
 short = "nothing"
 for i in change_list:
-    if i[2] > max:
-        max = i[2]
+    if i[2] > up:
+        up = i[2]
         name = i[0]
         short = i[1]
         price = i[3]
 
-rounded = round(max,2)
+rounded = round(up,2)
 change =  str(rounded)
 
 consumer_key = '****'           # api keys are hidden
@@ -75,7 +75,7 @@ media = api.media_upload(randoms)
 tweet_1 = "🩸Crypto market is down🩸 \n \nNo gainers among the top 100 cryptocurrencies in the past 24 hours"
 tweet_2 = 'The top performing cryptocurrency among the top 100 in the past 24 hours 📈 \n \n🔥 #%s ($%s) \n⬆️ It is up by %s precent \n💵 Current price: %s USD' % (name, short,change,price)
 
-if i[2] > 0:
+if up < 0:
     api.update_status(tweet_1)
 else:
     post_result = api.update_status(status=tweet_2, media_ids=[media.media_id])
