@@ -73,6 +73,8 @@ randoms = random.choice(images)
 
 media = api.media_upload(randoms)
 
+name = name.replace(" ", "")
+
 tweet_1 = "🩸Crypto market is down🩸 \n \nNo gainers among the top 100 cryptocurrencies in the past 24 hours"
 tweet_2 = 'The top performing cryptocurrency among the top 100 in the past 24 hours 📈 \n \n🔥 #%s ( $%s ) \n⬆️ It is up by %s%% \n💵 Current price: %s USD' % (name, short,change,price)
 
